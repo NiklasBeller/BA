@@ -1,0 +1,361 @@
+BA_Code
+¦   
++---eigenes
+¦       1_HYRAS_data.ipynb
+¦       2_timeseries.ipynb
+¦       3_climatic_attribiutes.ipynb
+¦       4_soil_attributes.ipynb
+¦       5_topographic_attributes.ipynb
+¦       6_landcover.ipynb
+¦       7_area.ipynb
+¦       8_statistics.ipynb
+¦       basins_ids.txt
+¦       catchments.py
+¦       catchment_ids.txt
+¦       
++---Hy2DL-1.1
+¦   ¦   .gitignore
+¦   ¦   basin_ids.txt
+¦   ¦   LICENSE
+¦   ¦   LSTM_SHM.png
+¦   ¦   README.md
+¦   ¦   requirements.txt
+¦   ¦   
+¦   +---data
+¦   ¦   +---basin_id
+¦   ¦   ¦       .gitkeep
+¦   ¦   ¦       basin_ids.txt
+¦   ¦   ¦       
+¦   ¦   +---CAMELS-DE
+¦   ¦   ¦   ¦   CAMELS_DE_climatic_attributes.csv
+¦   ¦   ¦   ¦   CAMELS_DE_Data_Description (1).pdf
+¦   ¦   ¦   ¦   CAMELS_DE_humaninfluence_attributes.csv
+¦   ¦   ¦   ¦   CAMELS_DE_hydrogeology_attributes.csv
+¦   ¦   ¦   ¦   CAMELS_DE_hydrologic_attributes.csv
+¦   ¦   ¦   ¦   CAMELS_DE_landcover_attributes.csv
+¦   ¦   ¦   ¦   CAMELS_DE_simulation_benchmark.csv
+¦   ¦   ¦   ¦   CAMELS_DE_soil_attributes.csv
+¦   ¦   ¦   ¦   CAMELS_DE_topographic_attributes.csv
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---CAMELS_DE_catchment_boundaries
+¦   ¦   ¦   ¦   +---catchments
+¦   ¦   ¦   ¦   ¦       CAMELS_DE_catchments.cpg
+¦   ¦   ¦   ¦   ¦       CAMELS_DE_catchments.dbf
+¦   ¦   ¦   ¦   ¦       CAMELS_DE_catchments.gpkg
+¦   ¦   ¦   ¦   ¦       CAMELS_DE_catchments.prj
+¦   ¦   ¦   ¦   ¦       CAMELS_DE_catchments.shp
+¦   ¦   ¦   ¦   ¦       CAMELS_DE_catchments.shx
+¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   +---gauging_stations
+¦   ¦   ¦   ¦           CAMELS_DE_gauging_stations.cpg
+¦   ¦   ¦   ¦           CAMELS_DE_gauging_stations.dbf
+¦   ¦   ¦   ¦           CAMELS_DE_gauging_stations.gpkg
+¦   ¦   ¦   ¦           CAMELS_DE_gauging_stations.prj
+¦   ¦   ¦   ¦           CAMELS_DE_gauging_stations.shp
+¦   ¦   ¦   ¦           CAMELS_DE_gauging_stations.shx
+¦   ¦   ¦   ¦           
+¦   ¦   ¦   +---model_parameters
+¦   ¦   ¦   ¦   +---HBV
+¦   ¦   ¦   ¦   ¦       CAMELS_DE_parameters_hbv.csv
+¦   ¦   ¦   ¦   ¦       
+¦   ¦   ¦   ¦   +---LSTM
+¦   ¦   ¦   ¦       ¦   CAMELS_DE_epochs_training_lstm.zip
+¦   ¦   ¦   ¦       ¦   
+¦   ¦   ¦   ¦       +---CAMELS_DE_epochs_training_lstm
+¦   ¦   ¦   ¦               epoch_1
+¦   ¦   ¦   ¦               (...)
+¦   ¦   ¦   ¦               epoch_20
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---timeseries
+¦   ¦   ¦   ¦       CAMELS_DE_hydromet_timeseries_DE110000.csv
+¦   ¦   ¦   ¦       CAMELS_DE_hydromet_timeseries_DE110010.csv
+¦   ¦   ¦   ¦       (...)
+¦   ¦   ¦   ¦       CAMELS_DE_hydromet_timeseries_DEG10610.csv
+¦   ¦   ¦   ¦       CAMELS_DE_hydromet_timeseries_DEG10620.csv
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---timeseries_simulated
+¦   ¦   ¦           CAMELS_DE_discharge_sim_DE110000.csv
+¦   ¦   ¦           CAMELS_DE_discharge_sim_DE110010.csv
+¦   ¦   ¦           (...)
+¦   ¦   ¦           CAMELS_DE_discharge_sim_DEG10610.csv
+¦   ¦   ¦           CAMELS_DE_discharge_sim_DEG10620.csv
+¦   ¦   ¦           
+¦   ¦   +---CAMELS_GB
+¦   ¦   ¦       .gitkeep
+¦   ¦   ¦       
+¦   ¦   +---CAMELS_US
+¦   ¦           .gitkeep
+¦   ¦           
+¦   +---Hy2DL
+¦       +---aux_functions
+¦       ¦   ¦   functions_aux.py
+¦       ¦   ¦   functions_datasets.py
+¦       ¦   ¦   functions_evaluation.py
+¦       ¦   ¦   functions_training.py
+¦       ¦   ¦   
+¦       ¦   +---.ipynb_checkpoints
+¦       ¦   ¦       functions_training-checkpoint.py
+¦       ¦   ¦       
+¦       ¦   +---__pycache__
+¦       ¦           functions_aux.cpython-312.pyc
+¦       ¦           functions_evaluation.cpython-312.pyc
+¦       ¦           functions_training.cpython-312.pyc
+¦       ¦           
+¦       +---benchmarks
+¦       ¦   +---kratzert
+¦       ¦   ¦       all_metrics.p
+¦       ¦   ¦       Kratzert et al_2019_LSTM.pdf
+¦       ¦   ¦       
+¦       ¦   +---Lees
+¦       ¦           Hydrological concept formation inside LSTMs.pdf
+¦       ¦           Lees_CAMELS-GB.pdf
+¦       ¦           metrics.nc
+¦       ¦           preds.nc
+¦       ¦           swvl3_errors.nc
+¦       ¦           swvl3_preds.nc
+¦       ¦           
+¦       +---conceptual_models
+¦       ¦       conceptualmodel_postprocess.ipynb
+¦       ¦       evaluation_metrics.py
+¦       ¦       experiment_camels_de.py
+¦       ¦       experiment_camels_gb.py
+¦       ¦       experiment_camels_us.py
+¦       ¦       hydrological_models.py
+¦       ¦       modelcalibration.py
+¦       ¦       modelcalibration_camelsde.py
+¦       ¦       modelcalibration_camelsgb.py
+¦       ¦       modelcalibration_camelsus.py
+¦       ¦       optimization_methods.py
+¦       ¦       
+¦       +---datasetzoo
+¦       ¦   ¦   basedataset.py
+¦       ¦   ¦   camelsch.py
+¦       ¦   ¦   camelsde.py
+¦       ¦   ¦   camelsgb.py
+¦       ¦   ¦   camelsus.py
+¦       ¦   ¦   caravan.py
+¦       ¦   ¦   
+¦       ¦   +---.ipynb_checkpoints
+¦       ¦   ¦       camelsde-checkpoint.py
+¦       ¦   ¦       
+¦       ¦   +---__pycache__
+¦       ¦           basedataset.cpython-312.pyc
+¦       ¦           camelsde.cpython-312.pyc
+¦       ¦           
+¦       +---experiments
+¦       ¦   ¦   Estimate_PET.ipynb
+¦       ¦   ¦   HybridModel_GB.ipynb
+¦       ¦   ¦   HybridModel_US.ipynb
+¦       ¦   ¦   Hybrid_LSTM_Bucket.ipynb
+¦       ¦   ¦   Hybrid_LSTM_NonSense.ipynb
+¦       ¦   ¦   Hybrid_LSTM_SHM.ipynb
+¦       ¦   ¦   LSTM_CAMELS_CH.ipynb
+¦       ¦   ¦   LSTM_CAMELS_DE copy.ipynb
+¦       ¦   ¦   LSTM_CAMELS_DE.ipynb
+¦       ¦   ¦   LSTM_CAMELS_GB.ipynb
+¦       ¦   ¦   LSTM_CAMELS_US.ipynb
+¦       ¦   ¦   LSTM_CARAVAN.ipynb
+¦       ¦   ¦   
+¦       ¦   +---.ipynb_checkpoints
+¦       ¦           LSTM_CAMELS_DE-checkpoint.ipynb
+¦       ¦           
+¦       +---modelzoo
+¦       ¦   ¦   baseconceptualmodel.py
+¦       ¦   ¦   cudalstm.py
+¦       ¦   ¦   hbv.py
+¦       ¦   ¦   hybrid.py
+¦       ¦   ¦   linear_reservoir.py
+¦       ¦   ¦   nonsense.py
+¦       ¦   ¦   shm.py
+¦       ¦   ¦   uh_routing.py
+¦       ¦   ¦   
+¦       ¦   +---__pycache__
+¦       ¦           cudalstm.cpython-312.pyc
+¦       ¦           
+¦       +---results
+¦           +---LSTM_CAMELS_DE_vortrainiert_spec_eigene Gebiete
+¦                   1_results.csv
+¦                   2_results.csv
+¦                   3_results.csv
+¦                   epoch_20
+¦                   scaler.pickle
+¦                   test_results.pickle
+¦                   
++---input_data
+¦   ¦   U2018_CLC2018_V2020_20u1.tif
+¦   ¦   U2018_CLC2018_V2020_20u1.tif.vat.dbf
+¦   ¦   
+¦   +---catchments
+¦   ¦       EZG_Derneburg.cpg
+¦   ¦       EZG_Derneburg.dbf
+¦   ¦       EZG_Derneburg.prj
+¦   ¦       EZG_Derneburg.shp
+¦   ¦       EZG_Derneburg.shx
+¦   ¦       EZG_Pionierbrücke.cpg
+¦   ¦       EZG_Pionierbrücke.dbf
+¦   ¦       EZG_Pionierbrücke.prj
+¦   ¦       EZG_Pionierbrücke.shp
+¦   ¦       EZG_Pionierbrücke.shx
+¦   ¦       EZG_Weitzmühlen.cpg
+¦   ¦       EZG_Weitzmühlen.dbf
+¦   ¦       EZG_Weitzmühlen.prj
+¦   ¦       EZG_Weitzmühlen.shp
+¦   ¦       EZG_Weitzmühlen.shx
+¦   ¦       
+¦   +---dem
+¦   ¦       dem_merged.tif
+¦   ¦       
+¦   +---hyras
+¦   ¦   +---Humidity
+¦   ¦   ¦       hurs_hyras_5_1951_2020_v5-0_de.nc
+¦   ¦   ¦       
+¦   ¦   +---Precipitation
+¦   ¦   ¦       pr_hyras_1_1931_2020_v5-0_de.nc
+¦   ¦   ¦       
+¦   ¦   +---RadiationGlobal
+¦   ¦   ¦       rsds_hyras_5_1951_v3-0_de.nc
+¦   ¦   ¦       rsds_hyras_5_1952_v3-0_de.nc
+¦   ¦   ¦       (...)
+¦   ¦   ¦       rsds_hyras_5_2019_v3-0_de.nc
+¦   ¦   ¦       rsds_hyras_5_2020_v3-0_de.nc
+¦   ¦   ¦       
+¦   ¦   +---TemperatureMax
+¦   ¦   ¦       tasmax_hyras_5_1951_2020_v5-0_de.nc
+¦   ¦   ¦       
+¦   ¦   +---TemperatureMean
+¦   ¦   ¦       tas_hyras_5_1951_2020_v5-0_de.nc
+¦   ¦   ¦       
+¦   ¦   +---TemperatureMin
+¦   ¦           tasmin_hyras_5_1951_2020_v5-0_de.nc
+¦   ¦           
+¦   +---isric
+¦   ¦   +---clay
+¦   ¦   ¦       clay_0-5cm_mean.tiff
+¦   ¦   ¦       clay_15-30cm_mean.tiff
+¦   ¦   ¦       clay_5-15cm_mean.tiff
+¦   ¦   ¦       
+¦   ¦   +---sand
+¦   ¦   ¦       sand_0-5cm_mean.tiff
+¦   ¦   ¦       sand_15-30cm_mean.tiff
+¦   ¦   ¦       sand_5-15cm_mean.tiff
+¦   ¦   ¦       
+¦   ¦   +---silt
+¦   ¦           silt_0-5cm_mean.tiff
+¦   ¦           silt_15-30cm_mean.tiff
+¦   ¦           silt_5-15cm_mean.tiff
+¦   ¦           
+¦   +---isric_extracted
+¦       +---clay
+¦       ¦       isric_clay_0-5cm_extracted.csv
+¦       ¦       isric_clay_15-30cm_extracted.csv
+¦       ¦       isric_clay_5-15cm_extracted.csv
+¦       ¦       
+¦       +---sand
+¦       ¦       isric_sand_0-5cm_extracted.csv
+¦       ¦       isric_sand_15-30cm_extracted.csv
+¦       ¦       isric_sand_5-15cm_extracted.csv
+¦       ¦       
+¦       +---silt
+¦               isric_silt_0-5cm_extracted.csv
+¦               isric_silt_15-30cm_extracted.csv
+¦               isric_silt_5-15cm_extracted.csv
+¦               
++---Messungen
+¦       1_Derneburg.csv
+¦       2_Pionierbrücke.csv
+¦       3_Weitzmühlen.csv
+¦       
++---output_data
+¦   +---1
+¦   ¦   +---data
+¦   ¦   ¦       1_Humidity.csv
+¦   ¦   ¦       1_Precipitation.csv
+¦   ¦   ¦       1_RadiationGlobal.csv
+¦   ¦   ¦       1_TemperatureMax.csv
+¦   ¦   ¦       1_TemperatureMean.csv
+¦   ¦   ¦       1_TemperatureMin.csv
+¦   ¦   ¦       
+¦   ¦   +---plots
+¦   ¦           Humidity_catchment_clipped.png
+¦   ¦           Humidity_timeseries.png
+¦   ¦           Precipitation_catchment_clipped.png
+¦   ¦           Precipitation_timeseries.png
+¦   ¦           RadiationGlobal_catchment_clipped.png
+¦   ¦           RadiationGlobal_timeseries.png
+¦   ¦           TemperatureMax_catchment_clipped.png
+¦   ¦           TemperatureMax_timeseries.png
+¦   ¦           TemperatureMean_catchment_clipped.png
+¦   ¦           TemperatureMean_timeseries.png
+¦   ¦           TemperatureMin_catchment_clipped.png
+¦   ¦           TemperatureMin_timeseries.png
+¦   ¦           
+¦   +---2
+¦   ¦   +---data
+¦   ¦   ¦       2_Humidity.csv
+¦   ¦   ¦       2_Precipitation.csv
+¦   ¦   ¦       2_RadiationGlobal.csv
+¦   ¦   ¦       2_TemperatureMax.csv
+¦   ¦   ¦       2_TemperatureMean.csv
+¦   ¦   ¦       2_TemperatureMin.csv
+¦   ¦   ¦       
+¦   ¦   +---plots
+¦   ¦           Humidity_catchment_clipped.png
+¦   ¦           Humidity_timeseries.png
+¦   ¦           Precipitation_catchment_clipped.png
+¦   ¦           Precipitation_timeseries.png
+¦   ¦           RadiationGlobal_catchment_clipped.png
+¦   ¦           RadiationGlobal_timeseries.png
+¦   ¦           TemperatureMax_catchment_clipped.png
+¦   ¦           TemperatureMax_timeseries.png
+¦   ¦           TemperatureMean_catchment_clipped.png
+¦   ¦           TemperatureMean_timeseries.png
+¦   ¦           TemperatureMin_catchment_clipped.png
+¦   ¦           TemperatureMin_timeseries.png
+¦   ¦           
+¦   +---3
+¦   ¦   +---data
+¦   ¦   ¦       3_Humidity.csv
+¦   ¦   ¦       3_Precipitation.csv
+¦   ¦   ¦       3_RadiationGlobal.csv
+¦   ¦   ¦       3_TemperatureMax.csv
+¦   ¦   ¦       3_TemperatureMean.csv
+¦   ¦   ¦       3_TemperatureMin.csv
+¦   ¦   ¦       
+¦   ¦   +---plots
+¦   ¦           Humidity_catchment_clipped.png
+¦   ¦           Humidity_timeseries.png
+¦   ¦           Precipitation_catchment_clipped.png
+¦   ¦           Precipitation_timeseries.png
+¦   ¦           RadiationGlobal_catchment_clipped.png
+¦   ¦           RadiationGlobal_timeseries.png
+¦   ¦           TemperatureMax_catchment_clipped.png
+¦   ¦           TemperatureMax_timeseries.png
+¦   ¦           TemperatureMean_catchment_clipped.png
+¦   ¦           TemperatureMean_timeseries.png
+¦   ¦           TemperatureMin_catchment_clipped.png
+¦   ¦           TemperatureMin_timeseries.png
+¦   ¦           
+¦   +---camels_de
+¦       ¦   CAMELS_DE_area_attributes.csv
+¦       ¦   CAMELS_DE_climatic_attributes.csv
+¦       ¦   CAMELS_DE_landcover_attributes.csv
+¦       ¦   CAMELS_DE_soil_attributes.csv
+¦       ¦   CAMELS_DE_topographic_attributes.csv
+¦       ¦   
+¦       +---timeseries
+¦               CAMELS_DE_hydromet_timeseries_1.csv
+¦               CAMELS_DE_hydromet_timeseries_2.csv
+¦               CAMELS_DE_hydromet_timeseries_3.csv
+¦               
++---results
+        1_results.csv
+        1_results_cde.csv
+        1_results_PR.xlsx
+        2_results.csv
+        2_results_cde.csv
+        2_results_PR.xlsx
+        3_results.csv
+        3_results_cde.csv
+        3_results_PR.xlsx
+        Analyse.csv
+        
